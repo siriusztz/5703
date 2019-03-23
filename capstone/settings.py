@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'user.middleware.FilterMiddleware'
+    # 'user.middleware.FilterMiddleware'  #过滤用的
 ]
 
 ROOT_URLCONF = 'capstone.urls'

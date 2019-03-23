@@ -1,10 +1,9 @@
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
+from django.urls import reverse
 
-
-# Create your views here.
 
 def user_login(request):
     if request.method == "GET":
@@ -37,9 +36,10 @@ def signup(request):
         try:
             user.save()
             return HttpResponse("save successfully")
-        except:
+        except Exception:
             return HttpResponse("save Unsuccessfully")
 
 
 def logout(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    logout(request)
+    return HttpResponseRedirect(reverse('login'))
